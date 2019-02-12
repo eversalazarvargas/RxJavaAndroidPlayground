@@ -1,15 +1,10 @@
 package com.example.everardo.rxjavaplayground
 
-import android.util.Log
 import io.reactivex.*
 import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Timed
-import io.reactivex.subscribers.DefaultSubscriber
 import io.reactivex.subscribers.DisposableSubscriber
 import org.junit.Assert.*
 import org.junit.Test
-import org.reactivestreams.Subscriber
-import org.reactivestreams.Subscription
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 
