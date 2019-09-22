@@ -1,8 +1,10 @@
-package com.example.everardo.rxjavaplayground
+package com.example.everardo.rxjavaplayground.activity
 
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v4.app.FragmentActivity
+import com.example.everardo.rxjavaplayground.R
+import com.example.everardo.rxjavaplayground.TimerApplication
 import com.example.everardo.rxjavaplayground.viewmodel.TimerViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
