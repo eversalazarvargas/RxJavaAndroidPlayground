@@ -4,35 +4,39 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Button
-        android:id="@+id/btnTimer"
-        android:text="Timer"
+    <TextView
+        android:id="@+id/tvFirstName"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        android:text="first name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Spinner
+        android:id="@+id/spinnerFirstName"
+        app:layout_constraintTop_toBottomOf="@+id/tvFirstName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvLastName"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerFirstName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="last name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btnTextBindings"
-        android:text="Rx Text bindings"
-        app:layout_constraintTop_toBottomOf="@+id/btnTimer"
+    <Spinner
+        android:id="@+id/spinnerLastName"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastName"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btnReactiveChain"
-        app:layout_constraintTop_toBottomOf="@+id/btnTextBindings"
+    <TextView
+        android:id="@+id/tvFirstAndLastName"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerLastName"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:text="reactive chain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btnSubject"
-        app:layout_constraintTop_toBottomOf="@+id/btnReactiveChain"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:text="subject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

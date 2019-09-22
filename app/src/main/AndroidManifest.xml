@@ -26,6 +26,8 @@
 
         <activity android:name=".activity.ReactiveChainActivity"/>
 
+        <activity android:name=".activity.SubjectActivity"/>
+
         <provider
             android:authorities="com.example.everardo.timer.provider"
             android:name=".database.TimerContentProvider"

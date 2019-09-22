@@ -16,5 +16,6 @@ class MenuActivity: FragmentActivity() {
         btnTimer.setOnClickListener { startActivity(Intent(this, MainActivity::class.java)) }
         btnTextBindings.setOnClickListener { startActivity(Intent(this, RxTextBindingActivity::class.java)) }
         btnReactiveChain.setOnClickListener { startActivity(Intent(this, ReactiveChainActivity::class.java)) }
+        btnSubject.setOnClickListener { startActivity(Intent(this, SubjectActivity::class.java)) }
     }
 }

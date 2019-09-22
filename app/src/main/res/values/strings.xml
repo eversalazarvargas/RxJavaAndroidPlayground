@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">rxjavaplayground</string>
+
+    <string-array name="first_names">
+        <item>Everardo</item>
+        <item>Juan</item>
+        <item>Pedro</item>
+        <item>Pablo</item>
+    </string-array>
+
+    <string-array name="last_names">
+        <item>Salazar</item>
+        <item>Gomez</item>
+        <item>Perez</item>
+        <item>Ramirez</item>
+    </string-array>
 </resources>
