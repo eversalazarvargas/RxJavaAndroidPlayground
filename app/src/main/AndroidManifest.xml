@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.everardo.rxjavaplayground">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:name=".TimerApplication"
@@ -29,6 +32,8 @@
         <activity android:name=".activity.SubjectActivity"/>
 
         <activity android:name=".activity.SearchActivity"/>
+
+        <activity android:name=".activity.NewsFeedActivity"/>
 
         <provider
             android:authorities="com.example.everardo.timer.provider"

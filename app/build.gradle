@@ -43,7 +43,14 @@ dependencies {
 // (see https://github.com/ReactiveX/RxJava/releases for latest 2.x.x version)
     implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
     // RxBinding wrappers for UI
-    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+
+    // https://mvnrepository.com/artifact/com.squareup.okhttp/okhttp
+    implementation group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
+
+
+
+
 
     kapt "android.arch.lifecycle:compiler:$lifecycle_version"
 

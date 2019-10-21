@@ -18,5 +18,6 @@ class MenuActivity: FragmentActivity() {
         btnReactiveChain.setOnClickListener { startActivity(Intent(this, ReactiveChainActivity::class.java)) }
         btnSubject.setOnClickListener { startActivity(Intent(this, SubjectActivity::class.java)) }
         btnSearch.setOnClickListener { startActivity(Intent(this, SearchActivity::class.java)) }
+        btnNews.setOnClickListener { startActivity(Intent(this, NewsFeedActivity::class.java)) }
     }
 }
