@@ -6,6 +6,7 @@ import android.util.Log
 import com.example.everardo.rxjavaplayground.R
 import com.jakewharton.rxbinding2.widget.RxTextView
 import io.reactivex.Observable
+import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_search.*
@@ -25,7 +26,7 @@ class SearchActivity: Activity() {
                         .observeOn(AndroidSchedulers.mainThread())
 
         textEventObservable.switchMap { text ->
-            search(text.toString())
+            search(text.toString()).toObservable()
                     .subscribeOn(Schedulers.io())
         }
                 .observeOn(AndroidSchedulers.mainThread())
@@ -35,8 +36,8 @@ class SearchActivity: Activity() {
 
     }
 
-    private fun search(searchTerm: String): Observable<List<String>> {
-        return Observable.create { emitter ->
+    private fun search(searchTerm: String): Single<List<String>> {
+        return Single.create { emitter ->
 
             Log.i("PROBANDO", "onSubscribe")
 
@@ -46,8 +47,7 @@ class SearchActivity: Activity() {
                 else -> listOf("a", "b", "c")
             }
 
-            emitter.onNext(result)
-            emitter.onComplete()
+            emitter.onSuccess(result)
         }
     }
 }
