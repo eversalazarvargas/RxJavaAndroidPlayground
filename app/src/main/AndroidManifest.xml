@@ -28,6 +28,8 @@
 
         <activity android:name=".activity.SubjectActivity"/>
 
+        <activity android:name=".activity.SearchActivity"/>
+
         <provider
             android:authorities="com.example.everardo.timer.provider"
             android:name=".database.TimerContentProvider"

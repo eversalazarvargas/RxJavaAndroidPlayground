@@ -36,4 +36,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btnSearch"
+        app:layout_constraintTop_toBottomOf="@+id/btnSubject"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </android.support.constraint.ConstraintLayout>

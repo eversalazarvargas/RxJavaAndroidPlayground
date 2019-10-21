@@ -17,5 +17,6 @@ class MenuActivity: FragmentActivity() {
         btnTextBindings.setOnClickListener { startActivity(Intent(this, RxTextBindingActivity::class.java)) }
         btnReactiveChain.setOnClickListener { startActivity(Intent(this, ReactiveChainActivity::class.java)) }
         btnSubject.setOnClickListener { startActivity(Intent(this, SubjectActivity::class.java)) }
+        btnSearch.setOnClickListener { startActivity(Intent(this, SearchActivity::class.java)) }
     }
 }
