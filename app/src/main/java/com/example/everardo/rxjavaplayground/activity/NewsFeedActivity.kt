@@ -66,6 +66,10 @@ class NewsFeedActivity: Activity() {
                         parser.parse(it.byteStream())
                     } ?: listOf()
                 }
+                .retry(3)
+                .onErrorReturn {
+                    listOf()
+                }
     }
 
     private fun getNetworkCall(url: String): Observable<Response> {
