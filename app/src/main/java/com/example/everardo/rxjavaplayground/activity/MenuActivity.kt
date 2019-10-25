@@ -19,5 +19,6 @@ class MenuActivity: FragmentActivity() {
         btnSubject.setOnClickListener { startActivity(Intent(this, SubjectActivity::class.java)) }
         btnSearch.setOnClickListener { startActivity(Intent(this, SearchActivity::class.java)) }
         btnNews.setOnClickListener { startActivity(Intent(this, NewsFeedActivity::class.java)) }
+        btnCreditCard.setOnClickListener { startActivity(Intent(this, CreditCardActivity::class.java)) }
     }
 }

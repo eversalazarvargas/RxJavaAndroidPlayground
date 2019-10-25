@@ -35,6 +35,8 @@
 
         <activity android:name=".activity.NewsFeedActivity"/>
 
+        <activity android:name=".activity.CreditCardActivity"/>
+
         <provider
             android:authorities="com.example.everardo.timer.provider"
             android:name=".database.TimerContentProvider"
