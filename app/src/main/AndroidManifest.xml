@@ -37,6 +37,8 @@
 
         <activity android:name=".activity.CreditCardActivity"/>
 
+        <activity android:name=".activity.FlickrActivity"/>
+
         <provider
             android:authorities="com.example.everardo.timer.provider"
             android:name=".database.TimerContentProvider"
