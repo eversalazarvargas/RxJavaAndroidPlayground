@@ -21,5 +21,6 @@ class MenuActivity: FragmentActivity() {
         btnNews.setOnClickListener { startActivity(Intent(this, NewsFeedActivity::class.java)) }
         btnCreditCard.setOnClickListener { startActivity(Intent(this, CreditCardActivity::class.java)) }
         btnFlickr.setOnClickListener { startActivity(Intent(this, FlickrActivity::class.java)) }
+        btnMVP.setOnClickListener { startActivity(Intent(this, MVPActivity::class.java)) }
     }
 }

@@ -39,6 +39,8 @@
 
         <activity android:name=".activity.FlickrActivity"/>
 
+        <activity android:name=".activity.MVPActivity"/>
+
         <provider
             android:authorities="com.example.everardo.timer.provider"
             android:name=".database.TimerContentProvider"
