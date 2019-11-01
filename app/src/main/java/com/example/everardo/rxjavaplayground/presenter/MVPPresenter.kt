@@ -8,12 +8,12 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
 
-class MVPPresenter(private val view: MVPContract.View, private val model: MVPModel): MVPContract.Presenter {
+class MVPPresenter(private val view: MVPContract.View, private val model: MVPModel) : MVPContract.Presenter {
 
     private val rootEventObservable = PublishSubject.create<String>()
     private val backEventObservable = PublishSubject.create<String>()
     private val resultObservable = BehaviorSubject.create<String>()
-    private val viewSubscriptions = CompositeDisposable()
+    private val isActive = BehaviorSubject.create<Boolean>()
     private val subscriptions = CompositeDisposable()
 
     init {
@@ -30,6 +30,16 @@ class MVPPresenter(private val view: MVPContract.View, private val model: MVPMod
                         .subscribe(resultObservable::onNext)
 
         subscriptions.add(disposable)
+
+        val liveResult: Observable<String> =
+                isActive.switchMap { active -> if (active) resultObservable.hide() else Observable.never() }
+                        .distinctUntilChanged()
+
+        liveResult.observeOn(AndroidSchedulers.mainThread())
+                .doOnNext { Log.i("PROBANDO", "view on next ${it}") }
+                .subscribe { result ->
+                    view.setResult(result)
+                }
     }
 
     override fun destroy() {
@@ -37,19 +47,11 @@ class MVPPresenter(private val view: MVPContract.View, private val model: MVPMod
     }
 
     override fun resume() {
-        val disposable =
-                resultObservable
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .doOnNext { Log.i("PROBANDO", "view on next ${it}") }
-                        .subscribe { result ->
-                            view.setResult(result)
-                        }
-
-        viewSubscriptions.add(disposable)
+        isActive.onNext(true)
     }
 
     override fun pause() {
-        viewSubscriptions.clear()
+        isActive.onNext(false)
     }
 
     override fun setRoot() {
